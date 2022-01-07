@@ -40,6 +40,7 @@
 		ExchangeSender
 		ExchangeReceiver
 		TableScan
+		FlashbackTimestamp
 		Join
 		IndexScan
 		Selection

@@ -83,6 +83,12 @@ message TableScan {
 	repeated KeyRange ranges = 6 [(gogoproto.nullable) = false]; // For global read in join, we must point out the key ranges when we don't have the region info.
 	repeated int64 primary_prefix_column_ids = 7;
 	optional bool need_mvcc = 8 [(gogoproto.nullable) = false];
+	repeated FlashbackTimestamp flashback_timestamps = 9;
+}
+
+message FlashbackTimestamp {
+	required uint64 start = 1 [(gogoproto.nullable) = false];
+	required uint64 end = 2 [(gogoproto.nullable) = false];
 }
 
 enum JoinType {
